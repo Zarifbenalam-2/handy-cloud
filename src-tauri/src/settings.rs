@@ -1009,7 +1009,9 @@ pub fn get_default_settings() -> AppSettings {
         show_whats_new_on_update: default_show_whats_new_on_update(),
         whats_new_last_seen_version: default_whats_new_last_seen_version(),
         selected_model: "".to_string(),
-        onboarding_completed: false,
+        // Cloud fork: dictation runs on the cloud engine by default, so
+        // model selection is optional — skip onboarding entirely.
+        onboarding_completed: true,
         always_on_microphone: false,
         spoken_languages: Vec::new(),
         selected_microphone: None,
@@ -1206,11 +1208,10 @@ fn apply_settings_migrations(
 ) -> bool {
     let mut updated = false;
 
-    // One-time onboarding migration: users with an explicit selected model have
-    // already made it through model selection. Users who merely have compatible
-    // files on disk should still see onboarding.
+    // One-time onboarding migration: cloud fork — model selection is
+    // optional (cloud engine), so every store lands past onboarding.
     if settings_value.get("onboarding_completed").is_none() {
-        settings.onboarding_completed = !settings.selected_model.is_empty();
+        settings.onboarding_completed = true;
         updated = true;
     }
 
