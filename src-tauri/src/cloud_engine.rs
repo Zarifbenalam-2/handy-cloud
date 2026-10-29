@@ -19,7 +19,7 @@ use base64::Engine as _;
 use serde::{Deserialize, Serialize};
 use specta::Type;
 
-use crate::audio_toolkit::WHISPER_SAMPLE_RATE;
+use crate::audio_toolkit::constants::WHISPER_SAMPLE_RATE;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize, Type)]
 #[serde(rename_all = "lowercase")]
