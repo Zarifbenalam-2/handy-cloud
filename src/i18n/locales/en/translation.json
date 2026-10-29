@@ -321,6 +321,21 @@
     "lockedWhileTranscribing": "You can switch models once History finishes transcribing."
   },
   "settings": {
+    "cloudEngine": {
+      "title": "Cloud engine",
+      "description": "Transcribe with a cloud engine instead of local models. Perplexity mode needs no account or key — press the shortcut and talk.",
+      "provider": "Engine",
+      "off": "Off (local models)",
+      "perplexity": "Perplexity / Soniox (free)",
+      "gemini": "Google Gemini",
+      "soniox": "Soniox (own key)",
+      "geminiKey": "Gemini API key",
+      "geminiKeyHint": "free key from aistudio.google.com",
+      "sonioxKey": "Soniox API key",
+      "save": "Save",
+      "saved": "Saved — restart Handy to apply",
+      "saveFailed": "Save failed"
+    },
     "modelSettings": {
       "title": "{{model}} Settings"
     },

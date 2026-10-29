@@ -44,7 +44,7 @@ pub struct CloudTranscriptionSettings {
     pub soniox_api_key: String,
 }
 
-fn default_gemini_model() -> String {
+pub fn default_gemini_model() -> String {
     "gemini-2.5-flash".to_string()
 }
 

@@ -731,6 +731,7 @@ pub fn run(cli_args: CliArgs) {
             commands::is_update_checks_locked,
             commands::get_app_dir_path,
             commands::get_app_settings,
+            commands::cloud::set_cloud_transcription_setting,
             commands::get_default_settings,
             commands::get_log_dir_path,
             commands::set_log_level,
